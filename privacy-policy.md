@@ -8,7 +8,7 @@ Catholic Prayers provides Catholic prayers, devotional content, and daily readin
 
 The app may connect to external services for these limited purposes:
 
-- Daily readings: the app requests reading content from `https://bible.usccb.org`.
+- Daily readings: the app opens official USCCB reading pages from `https://bible.usccb.org` and may request calendar/link information from that site.
 - Crash reporting: if configured with a Sentry DSN, the app may send crash reports, error diagnostics, device state, and app version details to Sentry to help diagnose app failures.
 - Advertising: if Google Mobile Ads is enabled in a release build, Google may process advertising identifiers and device/ad interaction data according to Google's advertising policies.
 - Device integrity check: the app uses device information locally to check whether a device appears rooted or jailbroken. This check is used to show a security warning and is not used to create an account profile.
@@ -31,7 +31,7 @@ Catholic Prayers is intended for a general audience and is not designed to colle
 
 ## Religious Content Notice
 
-Daily readings are sourced from USCCB web resources when available. Catholic Prayers is not affiliated with, endorsed by, or sponsored by USCCB, any diocese, parish, or religious organization unless separately stated in an official listing.
+Daily reading links point to USCCB web resources when available. Catholic Prayers is not affiliated with, endorsed by, or sponsored by USCCB, any diocese, parish, or religious organization unless separately stated in an official listing.
 
 ## Contact
 
