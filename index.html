@@ -5,15 +5,21 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Privacy Policy | Catholic Prayers</title>
   <meta name="description" content="Privacy Policy for Catholic Prayers.">
+  <meta name="theme-color" content="#0b0b0b">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
   <style>
     :root {
-      color-scheme: light;
-      --bg: #f7f4ee;
-      --paper: #ffffff;
-      --text: #1f2933;
-      --muted: #52616f;
-      --accent: #7b4f18;
-      --border: #e4ded3;
+      color-scheme: dark;
+      --bg: #0b0b0b;
+      --surface: #141614;
+      --surface-2: #191b19;
+      --text: #f3f0e8;
+      --muted: #aaa9a2;
+      --soft: #85857f;
+      --accent: #eabb67;
+      --border: #2b2d29;
     }
 
     * {
@@ -22,105 +28,167 @@
 
     body {
       margin: 0;
-      font-family: Arial, Helvetica, sans-serif;
-      line-height: 1.6;
+      font-family: Inter, system-ui, sans-serif;
+      line-height: 1.7;
       color: var(--text);
       background: var(--bg);
     }
 
+    body::before { content: ""; display: block; height: 3px; background: var(--accent); }
+
+    .site-header { width: min(1120px, calc(100% - 40px)); margin: 0 auto; padding: 28px 0 20px; display: flex; align-items: center; justify-content: space-between; }
+    .brand { color: var(--text); text-decoration: none; font: 600 1.35rem/1 "EB Garamond", Georgia, serif; letter-spacing: .01em; }
+    .brand span { color: var(--accent); }
+    .back-link { color: var(--muted); font-size: .78rem; text-decoration: none; border: 1px solid var(--border); padding: 8px 13px; border-radius: 999px; }
+    .back-link:hover { color: var(--text); border-color: var(--accent); }
+
+    .layout { width: min(1120px, calc(100% - 40px)); margin: 22px auto 72px; display: grid; grid-template-columns: 210px minmax(0, 760px); gap: 64px; align-items: start; }
+    .toc { position: sticky; top: 24px; padding-top: 5px; }
+    .toc-label { color: var(--soft); font-size: .68rem; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; margin: 0 0 14px; }
+    .toc a { display: block; color: var(--muted); font-size: .8rem; text-decoration: none; padding: 6px 0; }
+    .toc a:hover { color: var(--accent); }
+
     main {
-      width: min(860px, calc(100% - 32px));
-      margin: 40px auto;
-      padding: 36px;
-      background: var(--paper);
+      min-width: 0;
+      padding: 42px 48px 50px;
+      background: var(--surface);
       border: 1px solid var(--border);
-      border-radius: 8px;
+      border-radius: 14px;
     }
+
+    .eyebrow { color: var(--accent); font-size: .7rem; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; margin: 0 0 14px; }
 
     h1 {
-      margin: 0 0 8px;
-      font-size: 2rem;
+      margin: 0 0 7px;
+      font: 600 clamp(2.3rem, 5vw, 3.6rem)/1 "EB Garamond", Georgia, serif;
       line-height: 1.2;
-      color: #111827;
+      color: var(--text);
     }
 
+    .intro { color: var(--muted); font-size: 1.02rem; max-width: 66ch; margin: 24px 0 34px; }
+
     h2 {
-      margin-top: 32px;
-      font-size: 1.2rem;
-      color: #111827;
+      margin: 42px 0 12px;
+      padding-top: 24px;
+      border-top: 1px solid var(--border);
+      font: 600 1.55rem/1.2 "EB Garamond", Georgia, serif;
+      color: var(--text);
     }
+
+    h3 { margin: 26px 0 8px; font-size: .92rem; color: var(--accent); font-weight: 600; }
 
     p,
     li {
-      font-size: 1rem;
+      font-size: .94rem;
+      color: var(--muted);
     }
 
     .effective-date {
       margin-top: 0;
-      color: var(--muted);
+      color: var(--soft);
+      font-size: .78rem;
     }
 
     a {
       color: var(--accent);
+      text-underline-offset: 3px;
     }
 
     code {
       padding: 2px 4px;
       border-radius: 4px;
-      background: #f1eadf;
+      background: var(--surface-2);
       font-family: Consolas, Monaco, monospace;
       font-size: 0.95em;
+    }
+
+    ul { padding-left: 1.2rem; }
+    li { margin: 7px 0; }
+    @media (max-width: 760px) {
+      .site-header, .layout { width: min(100% - 28px, 680px); }
+      .site-header { padding-top: 22px; }
+      .layout { display: block; margin-top: 16px; }
+      .toc { position: static; display: flex; gap: 12px; overflow-x: auto; padding: 0 0 16px; margin-bottom: 2px; }
+      .toc-label { display: none; }
+      .toc a { white-space: nowrap; padding: 6px 11px; border: 1px solid var(--border); border-radius: 999px; font-size: .72rem; }
+      main { padding: 30px 22px 36px; border-radius: 11px; }
+      h2 { margin-top: 34px; }
     }
   </style>
 </head>
 <body>
+  <header class="site-header">
+    <a class="brand" href="../"><span>✦</span> Catholic Prayers</a>
+    <a class="back-link" href="../">Back to app</a>
+  </header>
+  <div class="layout">
+    <nav class="toc" aria-label="Policy sections">
+      <p class="toc-label">On this page</p>
+      <a href="#information">Information</a>
+      <a href="#advertising">Ad choices</a>
+      <a href="#use">Use &amp; sharing</a>
+      <a href="#retention">Retention</a>
+      <a href="#security">Security</a>
+      <a href="#contact">Contact</a>
+    </nav>
   <main>
+    <p class="eyebrow">Catholic Prayers · Legal</p>
     <h1>Privacy Policy</h1>
-    <p class="effective-date">Effective date: 2026-07-14</p>
+    <p class="effective-date">Effective date: 2026-11-02</p>
 
-    <p>Catholic Prayers is an offline-first Catholic prayer and devotional reference app. It includes locally saved favorites and prayer progress, optional local prayer reminders, links to official daily reading pages, advertising in production builds, and crash/performance diagnostics. The app does not require an account and does not ask users to provide a name, email address, contacts, photos, precise location, or payment information.</p>
+    <p class="intro">Catholic Prayers is an offline-first Catholic prayer and devotional reference app. It includes a bundled offline Bible, daily readings, prayers, saints and novenas, locally saved favorites and prayer progress, optional local prayer reminders, advertising, and crash/performance diagnostics. The app does not require an account and does not ask users to provide a name, email address, contacts, photos, precise location, or payment information.</p>
 
-    <h2>Information Processed by the App</h2>
+    <h2 id="information">Information Processed by the App</h2>
     <h3>Information stored only on the device</h3>
-    <p>Favorites, prayer-view history, daily prayer streaks, Rosary progress, novena progress, reading preferences, and reminder settings are stored locally on the device. Catholic Prayers does not upload this information to an app-owned server.</p>
+    <p>Favorites, prayer-view history, daily prayer streaks, Rosary progress, novena progress, Bible reading position and bookmarks, reading preferences, reminder settings, and any ad-free time earned by watching a rewarded ad are stored locally on the device. Catholic Prayers does not upload this information to an app-owned server.</p>
     <p>If a user enables a prayer reminder, the app requests notification permission and schedules a local notification on the device. The reminder may use a bundled bell sound. Notification permission and sound behavior can be changed in the device settings.</p>
 
-    <h3>Daily reading links</h3>
-    <p>The app may request calendar and link information from <code>https://bible.usccb.org</code> and opens selected USCCB reading pages in the device browser. Those requests disclose ordinary network information, such as the device IP address and browser or request metadata, to the destination service.</p>
+    <h3>Offline Bible and daily readings</h3>
+    <p>The Bible, daily verses, daily liturgical readings, prayers, saints, and novenas are read from data bundled with the app. Reading them does not send a request to USCCB or any other external reading website.</p>
 
-    <h3>Advertising</h3>
-    <p>Production builds use Google Mobile Ads. The Google Mobile Ads SDK may automatically collect and share IP address information, app and ad interactions, diagnostic information, and device or account identifiers for advertising, analytics, and fraud-prevention purposes. An IP address may be used to estimate a device's general location. Catholic Prayers currently requests non-personalized ads; this does not eliminate all advertising-related data processing.</p>
-    <p>Users can manage advertising and device identifier choices through applicable Google and device settings. Where consent or privacy choices are legally required, those choices must be respected before eligible advertising is requested.</p>
+    <h3 id="advertising">Advertising</h3>
+    <p>The app shows banner, native, interstitial, and optional rewarded ads through the Google Mobile Ads SDK (AdMob). Some builds may request ads through the TopOn (ThinkUp) mediation SDK, which can request ads from Google and other advertising partners.</p>
+    <p>These SDKs may automatically collect and share information such as IP address, device and advertising identifiers (including the Android advertising ID), app and ad interactions, and diagnostic information. They use it to show ads, measure ad performance, limit how often ads repeat, and prevent fraud. An IP address may be used to estimate a device's general location.</p>
+    <p>Ads may be personalized, meaning chosen using information about a user's activity across other apps and websites, where the user has allowed it:</p>
+    <ul>
+      <li>In the European Economic Area, the United Kingdom, and Switzerland, the app asks for consent through Google's consent message before personalized ads are shown. Users who do not consent receive non-personalized or limited ads, which are chosen using context such as the app's content and general location rather than a user's past activity.</li>
+      <li>Users can review or change that choice at any time with <strong>Advertising privacy choices</strong> in the app's Settings screen, where it is shown.</li>
+      <li>On Android, users can reset or delete their advertising ID, or opt out of ad personalization, in the device's Google or privacy settings.</li>
+    </ul>
+    <p>Ads are not targeted based on a user's religious beliefs.</p>
 
     <h3>Crash and performance diagnostics</h3>
-    <p>Release builds use Sentry to receive crash reports, error details, app release information, device and operating-system information, anonymous session health, navigation/performance measurements, and related diagnostic context. Performance tracing is sampled. Diagnostic Session Replay is configured only for error sessions and masks text, images, and vector graphics. Default personally identifiable information and automatic console-log collection are disabled.</p>
+    <p>Release builds use Sentry to receive crash reports, error details, app release information, device and operating-system information, session health, sampled navigation and performance measurements, and diagnostic breadcrumbs such as screen changes and app log messages leading up to an error. Sentry's collection of default personally identifiable information is disabled.</p>
 
-    <h2>How Information Is Used and Shared</h2>
-    <p>Catholic Prayers does not sell personal data. Information transmitted by Google Mobile Ads, Sentry, or an external reading website is processed by that provider to deliver the requested service, measure reliability or advertising, prevent fraud and abuse, and comply with applicable law. Catholic Prayers does not operate an account database or advertising profile database of its own.</p>
+    <h2 id="use">How Information Is Used and Shared</h2>
+    <p>Catholic Prayers does not sell personal data. Information collected by the advertising and diagnostics SDKs described above is processed by those providers to deliver ads, measure reliability and advertising performance, prevent fraud and abuse, and comply with applicable law. Catholic Prayers does not operate an account database or advertising profile database of its own.</p>
     <ul>
       <li><a href="https://policies.google.com/privacy">Google Privacy Policy</a></li>
+      <li><a href="https://policies.google.com/technologies/partner-sites">How Google uses information from apps that use its services</a></li>
       <li><a href="https://policies.google.com/technologies/ads">Google advertising technologies</a></li>
+      <li><a href="https://www.toponad.com/en/privacy-policy">TopOn Privacy Policy</a></li>
       <li><a href="https://sentry.io/privacy/">Sentry Privacy Policy</a></li>
-      <li><a href="https://bible.usccb.org">USCCB daily readings</a></li>
+      <li>Bible text source information is shown in the app's Bible section and in the included license and source notices.</li>
     </ul>
 
-    <h2>Data Retention and Deletion</h2>
-    <p>Locally stored app information remains on the device until it is cleared by the user, removed through device settings, or deleted when the app is uninstalled. Catholic Prayers has no app-owned account or cloud record to delete. Information processed by Google, Sentry, or linked websites is retained and deleted under those providers' policies and user-control processes.</p>
+    <h2 id="retention">Data Retention and Deletion</h2>
+    <p>Locally stored app information remains on the device until it is cleared by the user, removed through device settings, or deleted when the app is uninstalled. Catholic Prayers has no app-owned account or cloud record to delete. Information processed by Google, TopOn and its advertising partners, or Sentry is retained and deleted under those providers' policies and user-control processes.</p>
 
-    <h2>Data Security</h2>
-    <p>Network connections use HTTPS, and the Android production configuration disables cleartext traffic. No method of electronic transmission or storage is completely secure, but the app limits its own collection and keeps prayer preferences and progress on the device.</p>
+    <h2 id="security">Data Security</h2>
+    <p>The app's network connections use HTTPS; Android blocks unencrypted (cleartext) traffic for this app by default. No method of electronic transmission or storage is completely secure, but the app limits its own collection and keeps prayer preferences and progress on the device.</p>
 
     <h2>Children's Privacy</h2>
-    <p>Catholic Prayers is intended for a general audience aged 13 and older and is not designed as a child-directed service. The app does not knowingly request personal information from children. If the app's intended audience changes, its advertising, consent, store declarations, and privacy practices must be reviewed before that change is published.</p>
+    <p>Catholic Prayers is intended for a general audience aged 13 and older and is not designed as a child-directed service. The app does not knowingly request personal information from children. If the app's intended audience changes, its advertising, consent, store declarations, and privacy practices will be reviewed before that change is published.</p>
 
     <h2>Religious Content and Affiliation</h2>
-    <p>Daily reading links point to USCCB web resources when available. Catholic Prayers is not affiliated with, endorsed by, or sponsored by USCCB, the Holy See, any diocese, parish, religious order, or other religious organization unless separately stated in an official listing.</p>
+    <p>Catholic Prayers is not affiliated with, endorsed by, or sponsored by USCCB, the Holy See, any diocese, parish, religious order, or other religious organization unless separately stated in an official listing.</p>
 
     <h2>Changes to This Policy</h2>
     <p>This policy may be updated when app features, SDKs, or legal requirements change. The effective date at the top identifies the current version.</p>
 
-    <h2>Contact</h2>
+    <h2 id="contact">Contact</h2>
     <p>For privacy questions or data requests, contact Catholic Prayers at <a href="mailto:vinnbalvins@gmail.com">vinnbalvins@gmail.com</a>.</p>
   </main>
+  </div>
 </body>
 </html>
